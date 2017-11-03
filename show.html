@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pc照片直播展示</title>
+	<link rel="stylesheet" href="./pcCss/init.css">
+	<link rel="stylesheet" href="./pcCss/show.css">
+</head>
+<body>
+	<div id="main">
+		<h3 @click=''>{{Title}}</h3>
+		<div class="ReadIcon">			
+			<p><img src="./pcImg/icon.png" alt="icon"></p>
+			<p>按标签浏览</p>
+			<ul>
+				<li :class='{active:Active}' v-for='(item, index) in BtnClass'>{{item}}</li>
+			</ul>
+		</div>
+		<div class="line"></div>
+
+		<div class="showBox">
+			<ul>
+				<li v-for='(ImgItem, index) in imgSrc' @click='showImg'>
+					<img :src="ImgItem" alt="">
+				</li>
+			</ul>
+		</div>
+		<div class="ImgWrap" v-show='isWrap'>
+			<div class="Imgicon">
+				<img src="./pcImg/close.png" alt="close" @click='closeWrap'>
+				<!-- <img src="./pcImg/close.png" alt="close">
+				<img src="./pcImg/close.png" alt="close">
+				<img src="./pcImg/close.png" alt="close"> -->
+			</div>
+			
+			<img class='ImgShow' src="http://img.vphotos.cn/899CA0806F4E9A59F475079485289B67/postp/logothumb/vbox6042_DSC_4054_203533_small_v1.JPG" alt="">
+		</div>
+	</div>	
+	
+
+
+
+
+
+
+	<script type="text/javascript" src='./pcJs/vue.js'></script>
+	<script type="text/javascript" src='./pcJs/show.js'></script>
+</body>
+</html>
